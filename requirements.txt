@@ -1,0 +1,11 @@
+pandas
+yfinance
+requests
+vaderSentiment
+kafka-python
+psycopg2-binary
+sqlalchemy
+streamlit
+matplotlib
+nltk
+
