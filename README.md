@@ -1,24 +1,57 @@
 # NewsImpact
 
-This project simulates a real-time pipeline that ingests business news headlines, analyzes their sentiment, and matches them with corresponding stock prices. It helps explore how media sentiment might influence market behavior.
+The primary objective as the intial project was not real-time. I am going to retain the idea but the processing and deployment. I am going to document my steps in detail.
 
-## 🔍 What It Does
+## Steps
 
-- Fetches live business news headlines
-- Applies sentiment analysis on the headlines
-- Maps each news item to stocks it refers to
-- Collects latest stock prices for matched tickers
-- Stores everything in a PostgreSQL database
-- Visualizes the data in an interactive Streamlit dashboard
+We are going to branch the existing code,
+- creation of branch : `git branch aws-databricks`
+- transition to the branch : `git checkout aws-databricks`
+- remove all the files in the branch.
 
-## 📦 Key Components
+### Project setup
 
-- `main.py`: Runs the complete data pipeline
-- `configs/`: Contains database config
-- `ingestion/`: Handles fetching of news and stock prices
-- `processing/`: Sentiment analysis and correlation logic
-- `storage/`: PostgreSQL connection and saving
-- `dashboards/app.py`: Streamlit interface for insights
+#### Project structure
 
----
+```
+news-stock-impact/
+├── venv/                    # Python 3.10 virtual environment
+├── data/                    # Stores bronze/silver/gold files
+│   ├── bronze/
+│   ├── silver/
+│   └── gold/
+├── streaming/               # Kafka producers and consumers
+│   ├── producer_news.py
+│   └── consumer_news.py
+├── airflow/                 # Airflow DAGs and setup (added later)
+│   └── dags/
+├── dashboard/               # Streamlit dashboard (added later)
+│   └── app.py
+├── requirements.txt
+└── README.md
+
+```
+#### Environment setup
+
+As i am doing this project is Fedora. Check the commands accordingly.
+
+- Creation of venv : `python3.10 -m venv venv`
+- Activate venv : `source venv/bin/activate`
+- Creation of requirements.txt file : `touch requirements.txt`
+- Edit the content : `vim requirements.txt`
+
+requirements.txt content : 
+
+```
+requests
+pandas
+textblob
+kafka-python
+nltk
+```
+
+The below command is important because textblob relies on NLTK corpora.
+- `python -m textblob.download_corpora`
+
+
 
