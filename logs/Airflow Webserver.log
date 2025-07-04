@@ -1,0 +1,27 @@
+/home/tejhanagarajan/Projects/small-projects/NewsImpact/venv/lib64/python3.10/site-packages/flask_limiter/extension.py:336 UserWarning: Using the in-memory storage for tracking rate limits as no storage was explicitly specified. This is not recommended for production use. See: https://flask-limiter.readthedocs.io#configuring-a-storage-backend for documentation about configuring the storage backend.
+[[34m2025-07-04T12:41:58.516+0530[0m] {[34moptions.py:[0m83} WARNING[0m - The swagger_ui directory could not be found.
+    Please install connexion with extra install: pip install connexion[swagger-ui]
+    or provide the path to your local installation by passing swagger_path=<your path>
+[0m
+[[34m2025-07-04T12:41:58.517+0530[0m] {[34moptions.py:[0m83} WARNING[0m - The swagger_ui directory could not be found.
+    Please install connexion with extra install: pip install connexion[swagger-ui]
+    or provide the path to your local installation by passing swagger_path=<your path>
+[0m
+[2025-07-04 12:41:58 +0530] [37729] [INFO] Starting gunicorn 21.2.0
+
+Error: Already running on PID 29588 (or pid file '/home/tejhanagarajan/Projects/small-projects/NewsImpact/airflow/airflow-webserver.pid' is stale)
+
+  ____________       _____________
+ ____    |__( )_________  __/__  /________      __
+____  /| |_  /__  ___/_  /_ __  /_  __ \_ | /| / /
+___  ___ |  / _  /   _  __/ _  / / /_/ /_ |/ |/ /
+ _/_/  |_/_/  /_/    /_/    /_/  \____/____/|__/
+Running the Gunicorn Server with:
+Workers: 4 sync
+Host: 0.0.0.0:8080
+Timeout: 120
+Logfiles: - -
+Access Logformat: 
+=================================================================
+[[34m2025-07-04T12:43:57.342+0530[0m] {[34mwebserver_command.py:[0m222} ERROR[0m - No response from gunicorn master within 120 seconds[0m
+[[34m2025-07-04T12:43:57.343+0530[0m] {[34mwebserver_command.py:[0m223} ERROR[0m - Shutting down webserver[0m

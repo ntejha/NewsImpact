@@ -3,3 +3,5 @@ pandas
 textblob
 kafka-python
 nltk
+newsapi
+dotenv

@@ -1,0 +1,25 @@
+[2025-07-04T12:29:16.998+0530] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: correlate_gold_layer.generate_gold_layer scheduled__2025-07-04T06:50:00+00:00 [queued]>
+[2025-07-04T12:29:17.000+0530] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: correlate_gold_layer.generate_gold_layer scheduled__2025-07-04T06:50:00+00:00 [queued]>
+[2025-07-04T12:29:17.000+0530] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-07-04T12:29:17.013+0530] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): generate_gold_layer> on 2025-07-04 06:50:00+00:00
+[2025-07-04T12:29:17.015+0530] {standard_task_runner.py:60} INFO - Started process 26464 to run task
+[2025-07-04T12:29:17.017+0530] {standard_task_runner.py:87} INFO - Running: ['airflow', 'tasks', 'run', 'correlate_gold_layer', 'generate_gold_layer', 'scheduled__2025-07-04T06:50:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/correlate_dag.py', '--cfg-path', '/tmp/tmpme_h44mb']
+[2025-07-04T12:29:17.017+0530] {standard_task_runner.py:88} INFO - Job 2: Subtask generate_gold_layer
+[2025-07-04T12:29:17.040+0530] {task_command.py:423} INFO - Running <TaskInstance: correlate_gold_layer.generate_gold_layer scheduled__2025-07-04T06:50:00+00:00 [running]> on host fedora
+[2025-07-04T12:29:17.086+0530] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='tejha' AIRFLOW_CTX_DAG_ID='correlate_gold_layer' AIRFLOW_CTX_TASK_ID='generate_gold_layer' AIRFLOW_CTX_EXECUTION_DATE='2025-07-04T06:50:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-07-04T06:50:00+00:00'
+[2025-07-04T12:29:17.087+0530] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-07-04T12:29:17.087+0530] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'source ~/Projects/small-projects/NewsImpact/venv/bin/activate && python ~/Projects/small-projects/NewsImpact/scripts/correlate.py']
+[2025-07-04T12:29:17.092+0530] {subprocess.py:86} INFO - Output:
+[2025-07-04T12:29:17.287+0530] {subprocess.py:93} INFO - Silver layer not found.
+[2025-07-04T12:29:17.309+0530] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-07-04T12:29:17.312+0530] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/tejhanagarajan/Projects/small-projects/NewsImpact/venv/lib64/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/tejhanagarajan/Projects/small-projects/NewsImpact/venv/lib64/python3.10/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-07-04T12:29:17.313+0530] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=correlate_gold_layer, task_id=generate_gold_layer, execution_date=20250704T065000, start_date=20250704T065916, end_date=20250704T065917
+[2025-07-04T12:29:17.328+0530] {standard_task_runner.py:107} ERROR - Failed to execute job 2 for task generate_gold_layer (Bash command failed. The command returned a non-zero exit code 1.; 26464)
+[2025-07-04T12:29:17.349+0530] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-07-04T12:29:17.359+0530] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
